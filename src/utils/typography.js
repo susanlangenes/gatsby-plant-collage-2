@@ -1,11 +1,7 @@
-import Typography from "typography";
+import Typography from 'typography'
+import sternGroveTheme from 'typography-theme-stern-grove'
 
-const typography = new Typography({
-  baseFontSize: "18px",
-  baseLineHeight: 1.45,
-  headerFontFamily: ["Playfair Display", "serif"],
-  bodyFontFamily: ["Roboto", "sans-serif"]
-});
+const typography = new Typography(sternGroveTheme)
 
 // Insert styles directly into the <head>
 typography.injectStyles();
