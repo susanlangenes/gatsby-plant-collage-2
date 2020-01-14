@@ -222,6 +222,7 @@ img {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  height:auto;
 }
 h1 {
   margin-left: 0;
@@ -386,6 +387,8 @@ figure {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  max-width:100%;
+  height: auto;
 }
 pre {
   margin-left: 0;
