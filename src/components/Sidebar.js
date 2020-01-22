@@ -2,15 +2,16 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { blogURI } from "../../globals"
 
-const Sidebar = () => (
+const SidebarPosts = () => (
   <StaticQuery
     query={graphql`
       {
         posts(first: 10) {
           edges {
             node {
+              id
               title
-              uri
+              date
             }
           }
         }
@@ -20,4 +21,6 @@ const Sidebar = () => (
   ></StaticQuery>
 )
 
-export default Sidebar
+export default SidebarPosts
+
+
