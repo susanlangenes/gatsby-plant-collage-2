@@ -36,9 +36,11 @@ const Layout = ({ children }) => {
         }}
       >
         <Menu />
-        <main>{children}</main>
-        <div id="sidebar">
-          <h3>Sidebar</h3>
+        <div class="content-wrap">
+          <main>{children}</main>
+          <div id="sidebar">
+            <h3>Sidebar</h3>
+          </div>
         </div>
         <footer>
           © {new Date().getFullYear()}, Built with
