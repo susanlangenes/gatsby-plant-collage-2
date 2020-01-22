@@ -37,6 +37,9 @@ const Layout = ({ children }) => {
       >
         <Menu />
         <main>{children}</main>
+        <div id="sidebar">
+          <h3>Sidebar</h3>
+        </div>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
