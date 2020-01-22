@@ -1,25 +1,23 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import { blogURI } from "../../globals"
 
-const SidebarPosts = () => {
-  const data = useStaticQuery(graphql`
-    {
-      posts(first: 10) {
-        edges {
-          node {
-            title
-            uri
+const Sidebar = () => (
+  <StaticQuery
+    query={graphql`
+      {
+        posts(first: 10) {
+          edges {
+            node {
+              title
+              uri
+            }
           }
         }
       }
-    }
-  `)
-  return <ul>
-        <Link to={`${blogURI}/${uri}/`}>
-          <li style={{ marginBottom: "5px" }}>{title}</li>
-        </Link>
-        </ul>
-}
+    `}
+    render={data => <pre>{JSON.stringify(data, null, 4)}</pre>}
+  ></StaticQuery>
+)
 
-export default SidebarPosts
+export default Sidebar
