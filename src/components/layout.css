@@ -617,6 +617,7 @@ pre tt:after {
   }
   main {
     width: 75%;
+    padding-right: 4%;
   }
   #sidebar {
     width: 25%;
