@@ -5,19 +5,34 @@ import { blogURI } from "../../globals"
 const SidebarPosts = () => (
   <StaticQuery
     query={graphql`
-      {
+      query {
         posts(first: 10) {
           edges {
             node {
               id
               title
-              date
+              slug
             }
           }
         }
       }
     `}
-    render={data => <pre>{JSON.stringify(data, null, 4)}</pre>}
+    render={data => (
+      <ul>
+        <li>
+           {data.allWordpressPage.edges.map(edge => (
+              <Link
+                className="postlink"
+                to={edge.node.slug}
+                key={edge.node.slug}
+              >
+                {edge.node.title}
+              </Link>
+            ))}
+        </li>
+      </ul>
+    )
+  }
   ></StaticQuery>
 )
 
