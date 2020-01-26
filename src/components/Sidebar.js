@@ -2,40 +2,24 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { blogURI } from "../../globals"
 
-const SidebarPosts = () => (
+const ComponentName = () => (
   <StaticQuery
     query={graphql`
-      allWordpressPost {
-        posts(first: 10) {
+      {
+        posts {
           edges {
             node {
               id
               title
-              slug
             }
           }
         }
       }
     `}
-    render={data => (
-      <ul>
-        <li>
-           {data.allWordpressPost.edges.map(post => (
-              <Link
-                className="postlink"
-                to={post.node.slug}
-                key={post.node.slug}
-              >
-                {post.node.title}
-              </Link>
-            ))}
-        </li>
-      </ul>
-    )
-  }
+    render={data => <pre>{JSON.stringify(data, null, 4)}</pre>}
   ></StaticQuery>
 )
 
-export default SidebarPosts
+export default ComponentName
 
 
