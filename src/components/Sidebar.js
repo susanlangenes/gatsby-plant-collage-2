@@ -6,6 +6,7 @@ const ComponentName = () => (
   <StaticQuery
     query={graphql`
       {
+      wpgraphql {
         posts {
           edges {
             node {
@@ -15,6 +16,7 @@ const ComponentName = () => (
           }
         }
       }
+    }
     `}
     render={data => <pre>{JSON.stringify(data, null, 4)}</pre>}
   ></StaticQuery>
